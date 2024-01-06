@@ -3,8 +3,8 @@ import { Suspense, useState } from "react";
 import { HomeInfo, Loader } from "../components";
 import Island from "../models/Island";
 import Sky from "../models/Sky";
-import Bird from "../models/bird";
 import Plane from "../models/Plane";
+import Bird from "../models/Bird";
 
 const Landing = () => {
   const [isRotating, setIsRotating] = useState(false);
