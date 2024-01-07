@@ -11,7 +11,7 @@ const Navbar = () => {
       >
         <p className="blue-gradient_text">RS</p>
       </NavLink>
-      <nav className="flex text-lg gap-7 font-medium">
+      <nav className="flex text-lg gap-7 font-semibold">
         <NavLink
           to={"/about"}
           className={({ isActive }) =>
