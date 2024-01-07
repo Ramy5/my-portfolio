@@ -6,6 +6,11 @@ import Sky from "../models/Sky";
 import Plane from "../models/Plane";
 import Bird from "../models/Bird";
 
+/**
+ * Landing component represents the landing page of the portfolio.
+ * It displays a 3D scene with a rotating island and a plane.
+ * The current stage and rotation state can be adjusted.
+ */
 const Landing = () => {
   const [isRotating, setIsRotating] = useState(false);
   const [currentStage, setCurrentStage] = useState(1);
@@ -31,7 +36,7 @@ const Landing = () => {
       screenPlaneScale = [1.5, 1.5, 1.5];
       screenPlanePosition = [0, -1.5, 0];
     } else {
-      screenPlaneScale = [2.5,2.5, 2.5];
+      screenPlaneScale = [2.5, 2.5, 2.5];
       screenPlanePosition = [0, -2.5, 0];
     }
 
@@ -42,8 +47,8 @@ const Landing = () => {
   const [screenPlaneScale, screenPlanePosition] = adjustPlaneForScreenSize();
 
   return (
-    <section className="w-full h-screen relative">
-      <div className="absolute top-28 left-0 right-0 z-10 flex items-center justify-center">
+    <section className="relative w-full h-screen">
+      <div className="absolute left-0 right-0 z-10 flex items-center justify-center top-28">
         {currentStage && <HomeInfo currentStage={currentStage} />}
       </div>
 
@@ -51,7 +56,7 @@ const Landing = () => {
         className={`${
           isRotating ? "cursor-grabbing" : "cursor-grab"
         } w-full h-screen bg-transparent`}
-        camera={{ near: .1, far: 1000 }}
+        camera={{ near: 0.1, far: 1000 }}
       >
         <Suspense fallback={<Loader />}>
           {/* <spotLight /> */}

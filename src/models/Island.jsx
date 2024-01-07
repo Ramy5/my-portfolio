@@ -5,6 +5,16 @@ import { a } from "@react-spring/three";
 
 import islandScene from "../assets/3d/island.glb";
 
+/**
+ * Island component.
+ *
+ * @component
+ * @param {Object} props - The component props.
+ * @param {boolean} props.isRotating - Flag indicating if the island is rotating.
+ * @param {function} props.setCurrentStage - Function to set the current stage.
+ * @param {function} props.setIsRotating - Function to set the isRotating flag.
+ * @returns {JSX.Element} Island component.
+ */
 const Island = ({ isRotating, setCurrentStage, setIsRotating, ...props }) => {
   const { nodes, materials } = useGLTF(islandScene);
   const islandRef = useRef();
