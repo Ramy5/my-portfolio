@@ -33,7 +33,8 @@ const Contact = () => {
       )
       .then((res) => {
         setIsLoading(false);
-        // TODO: Show success message
+        // TODO: Show success 
+        message
         // TODO: HIDE AN ALERT
         setForm({ name: "", email: "", message: "" });
         console.log(res);
@@ -46,7 +47,7 @@ const Contact = () => {
   };
 
   return (
-    <section className="relative flex flex-col lg:flex-row max-container">
+    <section className="relative grid lg:grid-cols-2 max-container">
       <div className="flex flex-col flex-1 min-w-[50%]">
         <h1 className="head-text">Get In Touch</h1>
 
@@ -110,7 +111,6 @@ const Contact = () => {
         </form>
       </div>
 
-      <div>test</div>
     </section>
   );
 };
