@@ -1,22 +1,30 @@
-import { useRef, useState } from "react";
+import { Suspense, useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
+import { Canvas } from "@react-three/fiber";
+import Fox from "../models/Fox";
+import Loader from "../components/UI/Loader";
+
+import { toast } from "react-toastify";
 
 const Contact = () => {
   const formRef = useRef(null);
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [isLoading, setIsLoading] = useState(false);
+  const [currentAnimation, setCurrentAnimation] = useState("idle");
 
   const handleChange = (e) => {
     setForm((prev) => {
       return { ...prev, [e.target.name]: e.target.value };
     });
   };
-  const handleBlur = (e) => {};
-  const handleFocus = (e) => {};
+
+  const handleFocus = (e) => setCurrentAnimation("walk");
+  const handleBlur = (e) => setCurrentAnimation("idle");
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setIsLoading(true);
+    setCurrentAnimation("hit");
 
     emailjs
       .send(
@@ -33,21 +41,23 @@ const Contact = () => {
       )
       .then((res) => {
         setIsLoading(false);
-        // TODO: Show success 
-        message
-        // TODO: HIDE AN ALERT
-        setForm({ name: "", email: "", message: "" });
-        console.log(res);
+        toast.success("Email sent successfully!");
+        message;
+
+        setTimeout(() => {
+          setCurrentAnimation("idle");
+          setForm({ name: "", email: "", message: "" });
+        }, 3000);
       })
       .catch((err) => {
         setIsLoading(false);
-        // TODO Show error message
-        console.log(err);
+        setCurrentAnimation("idle");
+        toast.error(err);
       });
   };
 
   return (
-    <section className="relative grid lg:grid-cols-2 max-container">
+    <section className="relative gap-8 grid lg:grid-cols-2 max-container">
       <div className="flex flex-col flex-1 min-w-[50%]">
         <h1 className="head-text">Get In Touch</h1>
 
@@ -111,6 +121,27 @@ const Contact = () => {
         </form>
       </div>
 
+      <div className="w-full h-[350px]  md:h-[550px] lg:h-full">
+        <Canvas
+          camera={{
+            position: [0, 0, 5],
+            far: 1000,
+            near: 0.1,
+            fov: 75,
+          }}
+        >
+          <directionalLight position={[0, 0, 1]} intensity={2.5} />
+          <ambientLight intensity={0.5} />
+          <Suspense fallback={<Loader />}>
+            <Fox
+              currentAnimation={currentAnimation}
+              position={[0.5, 0.35, 0]}
+              rotation={[12.6, -0.7, 0]}
+              scale={[0.5, 0.5, 0.5]}
+            />
+          </Suspense>
+        </Canvas>
+      </div>
     </section>
   );
 };
