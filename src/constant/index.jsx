@@ -1,4 +1,11 @@
-import { meta, shopify, starbucks, tesla } from "../assets/images";
+import {
+  meta,
+  shopify,
+  starbucks,
+  tesla,
+  alexon,
+  octopus,
+} from "../assets/images";
 import {
   car,
   contact,
@@ -26,6 +33,11 @@ import {
   typescript,
   pug,
   daisyui,
+  reactquery,
+  formik,
+  gulp,
+  jest,
+  python,
 } from "../assets/icons";
 
 export const skills = [
@@ -80,6 +92,26 @@ export const skills = [
     type: "Frontend",
   },
   {
+    imageUrl: reactquery,
+    name: "React-query",
+    type: "Frontend",
+  },
+  {
+    imageUrl: formik,
+    name: "Formik",
+    type: "Version Control",
+  },
+  {
+    imageUrl: gulp,
+    name: "Gulp",
+    type: "Version Control",
+  },
+  {
+    imageUrl: jest,
+    name: "Jest",
+    type: "Version Control",
+  },
+  {
     imageUrl: git,
     name: "Git",
     type: "Version Control",
@@ -106,59 +138,44 @@ export const skills = [
     name: "TypeScript",
     type: "Frontend",
   },
+  {
+    imageUrl: python,
+    name: "Python",
+    type: "Backend",
+  },
 ];
 
 export const experiences = [
   {
     title: "React.js Developer",
-    company_name: "Starbucks",
-    icon: starbucks,
+    company_name: (
+      <a href="https://alexon.online/" target="_blank">
+        ALEXON INCORP
+      </a>
+    ),
+    icon: alexon,
     iconBg: "#accbe1",
-    date: "March 2020 - April 2021",
+    date: "Oct 2023 - Present",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      "Engineered an accounting ERP with React.js, Tailwind CSS, React Query, React Table, and TypeScript for a superior user experience.",
+      "Applied SOLID principles for scalable and maintainable accounting code.",
+      "Implemented a modular design system with Atom Design for streamlined development and visual consistency.",
+      "Leveraged React Query for efficient data fetching in accounting-related front-end components.",
+      "Seamlessly integrated React Table for enhanced data presentation and manipulation in the accounting ERP.",
     ],
   },
   {
-    title: "React Native Developer",
-    company_name: "Tesla",
-    icon: tesla,
-    iconBg: "#fbc3bc",
-    date: "Jan 2021 - Feb 2022",
+    title: "Next.js Developer",
+    company_name: "Octopus",
+    icon: octopus,
+    iconBg: "#060012",
+    date: "Jul 2023 - Oct 2023",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
-    ],
-  },
-  {
-    title: "Web Developer",
-    company_name: "Shopify",
-    icon: shopify,
-    iconBg: "#b7e4c7",
-    date: "Jan 2022 - Jan 2023",
-    points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
-    ],
-  },
-  {
-    title: "Full stack Developer",
-    company_name: "Meta",
-    icon: meta,
-    iconBg: "#a2d2ff",
-    date: "Jan 2023 - Present",
-    points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      "Developed and maintained front-end components for shop e-commerce and landing page projects using React.js and Next.js in a remote part-time role.",
+      "Applied JavaScript expertise for dynamic functionality and improved interactivity.",
+      "Ensured visually appealing and user-friendly interfaces with responsive design principles.",
+      "Collaborated remotely with cross-functional teams for effective project alignment.",
+      "Contributed to cutting-edge features and performance enhancements in a part-time capacity.",
     ],
   },
 ];
@@ -177,7 +194,7 @@ export const socialLinks = [
   {
     name: "LinkedIn",
     iconUrl: linkedin,
-    link: "https://www.linkedin.com/in/YourLinkedInUsername",
+    link: "https://www.linkedin.com/in/ramy5/",
   },
 ];
 

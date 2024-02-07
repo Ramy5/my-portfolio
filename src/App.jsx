@@ -31,10 +31,10 @@ const router = createBrowserRouter([
 
 function App() {
   return (
-    <>
+    <main className="h-screen bg-slate-300/20">
       <RouterProvider router={router} />;
       <ToastContainer />
-    </>
+    </main>
   );
 }
 

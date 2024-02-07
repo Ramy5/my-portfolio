@@ -1,11 +1,16 @@
-import { skills } from "../constant";
+import { skills, experiences } from "../constant";
+import { VerticalTimeline } from "react-vertical-timeline-component";
+import "react-vertical-timeline-component/style.min.css";
+import Experience from "../components/about/Experience";
+import Skills from "../components/about/Skills";
+import Cta from "../components/about/Cta";
 
 const About = () => {
   return (
     <section className="max-container">
       <h1 className="head-text">
-        Hello, I'm
-        <span className="blue-gradient_text font-semibold drop-shadow">
+        Hello, I'm{" "}
+        <span className="font-semibold blue-gradient_text drop-shadow">
           Ramy
         </span>
       </h1>
@@ -26,22 +31,34 @@ const About = () => {
         </p>
       </div>
 
-      <div className="py-10 flex flex-col">
+      <div className="flex flex-col py-16">
         <h3 className="subhead-text">Skills</h3>
 
+        {/* SKILLS */}
         <div className="flex flex-wrap gap-12 mt-6">
-          {skills.map((skill) => {
-            const {imageUrl, name} = skill
-
-            return <div className="block-container w-20 h-20">
-              <div className="btn-back rounded-xl"/>
-              <div className="flex btn-front justify-center items-center cursor-pointer rounded-xl" title={name}>
-                <img src={imageUrl} alt={name} className="w-1/2 h-1/2 object-contain"/>
-              </div>
-            </div>
+          {skills.map((skill, index) => {
+            return <Skills {...skill} key={index} />;
           })}
         </div>
+
+        <div className="py-16">
+          <h3 className="subhead-text">Work Experience</h3>
+
+          {/* EXPERIENCE */}
+          <div className="mt-8">
+            <VerticalTimeline>
+              {experiences.map((exp, index) => {
+                return <Experience {...exp} key={index} />;
+              })}
+            </VerticalTimeline>
+          </div>
+        </div>
       </div>
+
+      <hr className="border-slate-200" />
+
+      {/* CTA */}
+      <Cta />
     </section>
   );
 };
