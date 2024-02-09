@@ -57,7 +57,7 @@ const Contact = () => {
   };
 
   return (
-    <section className="relative gap-8 grid lg:grid-cols-2 max-container">
+    <section className="h-screen relative gap-8 grid lg:grid-cols-2 max-container">
       <div className="flex flex-col flex-1 min-w-[50%]">
         <h1 className="head-text">Get In Touch</h1>
 

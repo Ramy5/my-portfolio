@@ -140,7 +140,7 @@ export const skills = [
   },
   {
     imageUrl: python,
-    name: "Python",
+    name: "Python (basics)",
     type: "Backend",
   },
 ];
@@ -189,7 +189,7 @@ export const socialLinks = [
   {
     name: "GitHub",
     iconUrl: github,
-    link: "https://github.com/YourGitHubUsername",
+    link: "https://github.com/Ramy5",
   },
   {
     name: "LinkedIn",
@@ -202,49 +202,57 @@ export const projects = [
   {
     iconUrl: pricewise,
     theme: "btn-back-red",
-    name: "Amazon Price Tracker",
+    name: "Comfy Store",
     description:
-      "Developed a web application that tracks and notifies users of price changes for products on Amazon, helping users find the best deals.",
-    link: "https://github.com/adrianhajdin/pricewise",
+      "A dynamic online store designed to showcase the integration of React.js and Tailwind CSS. This web application mimics an online shopping experience, offering users the ability to browse a variety of products.",
+    link: "https://github.com/Ramy5/comfy-store",
   },
   {
     iconUrl: threads,
     theme: "btn-back-green",
-    name: "Full Stack Threads Clone",
+    name: "Google Clone",
     description:
-      'Created a full-stack replica of the popular discussion platform "Threads," enabling users to post and engage in threaded conversations.',
-    link: "https://github.com/adrianhajdin/threads",
+      "The Google Clone project mimics Google's search engine with Next.js and Tailwind CSS. It uses Google's custom search API for results, fully responsive for easy searching across devices.",
+    link: "https://github.com/Ramy5/Google-Clone",
   },
   {
     iconUrl: car,
     theme: "btn-back-blue",
-    name: "Car Finding App",
+    name: "IMDb Clone",
     description:
-      "Designed and built a mobile app for finding and comparing cars on the market, streamlining the car-buying process.",
-    link: "https://github.com/adrianhajdin/project_next13_car_showcase",
-  },
-  {
-    iconUrl: snapgram,
-    theme: "btn-back-pink",
-    name: "Full Stack Instagram Clone",
-    description:
-      "Built a complete clone of Instagram, allowing users to share photos and connect with friends in a familiar social media environment.",
-    link: "https://github.com/adrianhajdin/social_media_app",
+      "IMDB Clone is a movie information web app, offering users the ability to search and explore films, including the latest releases, ratings, and reviews. Crafted as a replica of IMDB, this project is aimed at honing skills in Next.js 13 and Tailwind CSS 3.",
+    link: "https://github.com/Ramy5/IMDb-Clone",
   },
   {
     iconUrl: estate,
     theme: "btn-back-black",
-    name: "Real-Estate Application",
+    name: "Forkify Application",
     description:
-      "Developed a web application for real estate listings, facilitating property searches and connecting buyers with sellers.",
-    link: "https://github.com/adrianhajdin/projects_realestate",
+      "Searching for recipes food, getting the results from API, displaying these results, bookmarking favorite recipes, using local storage to store them, using classes, modules, promises, async-await, parcel, project architecture, and more ;)",
+    link: "https://github.com/Ramy5/Forkify-App",
   },
   {
     iconUrl: summiz,
     theme: "btn-back-yellow",
-    name: "AI Summarizer Application",
+    name: "Bankist Clone",
     description:
-      "App that leverages AI to automatically generate concise & informative summaries from lengthy text content, or blogs.",
-    link: "https://github.com/adrianhajdin/project_ai_summarizer",
+      "Simulate the bank, Transfer money from one account to another, Loan the money from the bank, Calculate and show the balance, and more!",
+    link: "https://github.com/Ramy5/Bankist-Clone",
+  },
+  {
+    iconUrl: summiz,
+    theme: "btn-back-yellow",
+    name: "Mapty Clone",
+    description:
+      "Recording running and cycling workouts and displaying them on the map, getting information about the city, and getting weather data in the city by API.",
+    link: "https://github.com/Ramy5/Mapty_App-Clone",
+  },
+  {
+    iconUrl: snapgram,
+    theme: "btn-back-pink",
+    name: "Natours Clone",
+    description:
+      "A Simple landing page by using Sass and Advanced css properties",
+    link: "https://github.com/Ramy5/Natours-clone",
   },
 ];

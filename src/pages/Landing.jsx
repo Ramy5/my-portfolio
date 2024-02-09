@@ -1,10 +1,12 @@
 import { Canvas } from "@react-three/fiber";
-import { Suspense, useState } from "react";
+import { Suspense, useEffect, useRef, useState } from "react";
 import { HomeInfo, Loader } from "../components";
 import Island from "../models/Island";
 import Sky from "../models/Sky";
 import Plane from "../models/Plane";
 import Bird from "../models/Bird";
+import Sakura from "../assets/sakura.mp3";
+import { soundoff, soundon } from "../assets/icons";
 
 /**
  * Landing component represents the landing page of the portfolio.
@@ -14,6 +16,20 @@ import Bird from "../models/Bird";
 const Landing = () => {
   const [isRotating, setIsRotating] = useState(false);
   const [currentStage, setCurrentStage] = useState(1);
+  const [isSoundOpen, setIsSoundOpen] = useState(false);
+  const soundRef = useRef(new Audio(Sakura));
+  soundRef.current.volume = 0.4;
+  soundRef.current.loop = true;
+
+  useEffect(() => {
+    if (isSoundOpen) {
+      soundRef.current.play();
+    }
+
+    return () => {
+      soundRef.current.pause();
+    };
+  }, [isSoundOpen]);
 
   const adjustIslandForScreenSize = () => {
     let screenScale = null;
@@ -86,6 +102,16 @@ const Landing = () => {
           />
         </Suspense>
       </Canvas>
+
+      {/* SOUND */}
+      <div className="absolute bottom-3 left-3">
+        <img
+          onClick={() => setIsSoundOpen((prev) => !prev)}
+          src={isSoundOpen ? soundon : soundoff}
+          alt="sound"
+          className="w-10 h-10 object-contain cursor-pointer"
+        />
+      </div>
     </section>
   );
 };

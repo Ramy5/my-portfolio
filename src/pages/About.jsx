@@ -3,7 +3,7 @@ import { VerticalTimeline } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
 import Experience from "../components/about/Experience";
 import Skills from "../components/about/Skills";
-import Cta from "../components/about/Cta";
+import Cta from "../components/UI/Cta";
 
 const About = () => {
   return (
@@ -35,7 +35,7 @@ const About = () => {
         <h3 className="subhead-text">Skills</h3>
 
         {/* SKILLS */}
-        <div className="flex flex-wrap gap-12 mt-6">
+        <div className="flex flex-wrap gap-6 md:gap-8 mt-6">
           {skills.map((skill, index) => {
             return <Skills {...skill} key={index} />;
           })}

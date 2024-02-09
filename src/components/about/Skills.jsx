@@ -2,7 +2,7 @@ import React from "react";
 
 const Skills = ({ imageUrl, name }) => {
   return (
-    <div className="w-20 h-20 block-container">
+    <div className="w-14 h-14 md:w-20 md:h-20 block-container">
       <div className="btn-back rounded-xl" />
       <div
         className="flex items-center justify-center cursor-pointer btn-front rounded-xl"
